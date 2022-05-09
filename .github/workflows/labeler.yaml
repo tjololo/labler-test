@@ -13,12 +13,12 @@ jobs:
       - uses: TimonVS/pr-labeler-action@v3
         if: ${{ github.event.pull_request.head.repo.full_name != 'tjololo/labeler-test' }}
         with:
-          configuration-path: .github/external-pr-labeler.yml
+          configuration-path: .github/external-pr-labeler.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: TimonVS/pr-labeler-action@v3
         if: ${{ github.event.pull_request.head.repo.full_name == 'tjololo/labeler-test' }}
         with:
-          configuration-path: .github/internal-pr-labeler.yml
+          configuration-path: .github/internal-pr-labeler.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -11,13 +11,13 @@ jobs:
       pull-requests: write
     steps:
       - uses: TimonVS/pr-labeler-action@v3
-        if: ${{ github.event.pull_request.head.repo.full_name != 'tjololo/labeler-test' }}
+        if: ${{ github.event.pull_request.head.repo.full_name != 'tjololo/labler-test' }}
         with:
           configuration-path: .github/external-pr-labeler.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: TimonVS/pr-labeler-action@v3
-        if: ${{ github.event.pull_request.head.repo.full_name == 'tjololo/labeler-test' }}
+        if: ${{ github.event.pull_request.head.repo.full_name == 'tjololo/labler-test' }}
         with:
           configuration-path: .github/internal-pr-labeler.yaml
         env:
